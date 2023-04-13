@@ -1,0 +1,89 @@
+body {
+    padding: 20px;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+fieldset,
+button,
+aside {
+    margin: 20px;
+}
+
+label,
+input,
+select {
+    display: block;
+    margin-top: 20px;
+}
+
+
+/* Sélection des 11 premiers enfants directs du 2eme fieldset, sauf les éléments de type h2.
+histoire de faire peur avec les sélecteurs...
+*/
+
+fieldset:nth-of-type(2)> :nth-child(-n+11):not(h2) {
+    display: inline-block;
+}
+
+fieldset {
+    background: #F0F0F0;
+    border-color: #CCC;
+}
+
+legend {
+    text-transform: uppercase;
+    padding: 10px;
+    border: 1px solid #CCC;
+    background: #03A9F4;
+    color: #FFF;
+}
+
+button {
+    background: #8BC34A;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, .5);
+}
+
+aside {
+    background: #BBDEFB;
+    max-width: 300px;
+    padding: 10px 20px 20px;
+}
+
+
+/*** TIPS pour les états des champs ***/
+
+
+/* dans le cas ci-dessous, impacte seulement les champs du 1er fieldset : input type=text/password/email, 
+car ils ont un attribut required */
+
+
+/* pseudo-classe :valid  > élément qui remplit les exigences de son type */
+
+fieldset:first-child :valid {
+    border: 1px solid #8BC34A;
+    background: #8BC34A;
+    padding: 20px;
+}
+
+
+/* pseudo-classe :invalid  > élément qui remplit les exigences de son type
+
+Décommenter pour tester
+*/
+
+
+/*
+fieldset:first-child :invalid {
+	background:#D32F2F;
+	color:white;
+	border:1px solid #CCC;
+}
+*/

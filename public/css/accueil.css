@@ -1,0 +1,129 @@
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+h1 {
+    color: #20e6bb;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed gray;
+}
+
+h1 span {
+    display: block;
+}
+
+h1 span:nth-child(1) {
+    font-weight: normal;
+    color: #ed5d34;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 30px;
+    margin: 80px 0;
+}
+
+.card-wrapper {
+    position: relative;
+    min-height: 350px;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.071);
+    -webkit-transition: transform 0.8s cubic-bezier(0.86, 0, 0.071);
+    -moz-transition: transform 0.8s cubic-bezier(0.86, 0, 0.071);
+    -ms-transition: transform 0.8s cubic-bezier(0.86, 0, 0.071);
+    -o-transition: transform 0.8s cubic-bezier(0.86, 0, 0.071);
+    color: white;
+    font-weight: bold;
+}
+
+.card-front .card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+    background: #ed5d34;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-wrapper:nth-child(even).card-front {
+    background-color: #1a2f42;
+}
+
+.card-front p {
+    position: absolute;
+    line-height: 35px;
+}
+
+.arrow-icon {
+    position: absolute;
+    height: 30px;
+    bottom: 30px;
+}
+
+.card-price {
+    font-size: 45px;
+}
+
+.card-back {
+    background: #ed5d34;
+    transform: rotate y(360deg);
+    -webkit-transform: rotate y(360deg);
+    -moz-transform: rotate y(360deg);
+    -ms-transform: rotate y(360deg);
+    -o-transform: rotate y(360deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper:nth-child(even) .card-back {
+    background-color: blue;
+}
+
+.card-back a {
+    display: inline-block;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1, 5px;
+    font-weight: normal;
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(3, 7, 231);
+}
